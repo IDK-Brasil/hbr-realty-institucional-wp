@@ -101,7 +101,6 @@ function hbr_enqueue_assets()
 add_action('wp_enqueue_scripts', 'hbr_enqueue_assets');
 
 if (function_exists('acf_add_options_page')) {
-
     acf_add_options_page([
         'page_title' => 'Gerenciar Site',
         'menu_title' => 'Gerenciar Site',
