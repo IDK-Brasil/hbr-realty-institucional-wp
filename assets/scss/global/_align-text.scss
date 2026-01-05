@@ -1,0 +1,21 @@
+.ta-center{
+  text-align: center;
+}
+.ta-left{
+  text-align: left;
+}
+.ta-right{
+  text-align: right;
+}
+
+@media(min-width: 767px){
+  .ta-center__md{
+    text-align: center;
+  }
+  .ta-left__md{
+    text-align: left;
+  }
+  .ta-right__md{
+    text-align: right;
+  }
+}

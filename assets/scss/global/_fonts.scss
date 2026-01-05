@@ -1,0 +1,104 @@
+// Fonte Aktiv Grotesk
+@font-face {
+  font-family: "Aktiv Grotesk";
+  src: url("../fonts/aktiv/AktivGrotesk-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Aktiv Grotesk";
+  src: url("../fonts/aktiv/AktivGrotesk-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Aktiv Grotesk";
+  src: url("../fonts/aktiv/AktivGrotesk-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Aktiv Grotesk";
+  src: url("../fonts/aktiv/AktivGrotesk-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+// Fonte Libre Franklin
+@font-face {
+  font-family: "Libre Franklin";
+  src: url("../fonts/libre/LibreFranklin-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Libre Franklin";
+  src: url("../fonts/libre/LibreFranklin-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Libre Franklin";
+  src: url("../fonts/libre/LibreFranklin-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+// Fonte PP Right Gothic
+@font-face {
+  font-family: "PP Right Gothic";
+  src: url("../fonts/pp/PPRightGothic-WideMedium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+// Variables
+$fontWeights: (800, 700, 600, 500, 400);
+
+$fontSizes: (16);
+
+$lineHeights: (100, 120, 130, 140, 150);
+
+// Properties
+.ff-montserrat {
+  font-family: "Montserrat", sans-serif;
+}
+
+@each $size in $fontWeights {
+  .fw-#{$size} {
+    font-weight: $size;
+  }
+}
+
+@each $size in $fontSizes {
+  .fs-#{$size} {
+    font-size: px-to-rem($size);
+  }
+}
+
+@each $height in $lineHeights {
+  .lh-#{$height} {
+    line-height: $height + 0%;
+  }
+}
+
+@media (min-width: 767px) {
+  @each $size in $fontSizes {
+    .fs-#{$size}__md {
+      font-size: px-to-rem($size);
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  @each $size in $fontSizes {
+    .fs-#{$size}__lg {
+      font-size: px-to-rem($size);
+    }
+  }
+}

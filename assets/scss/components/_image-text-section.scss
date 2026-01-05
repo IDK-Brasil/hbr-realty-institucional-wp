@@ -1,0 +1,77 @@
+@use "../global/global" as global;
+
+.image-text-section-idk-1225 {
+  margin-top: -90px;
+  padding: 170px 0 80px;
+  background-color: global.color(gray-50);
+
+  .section-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 104px;
+  }
+
+  img {
+    flex: 0.9;
+    height: 582px;
+    object-fit: cover;
+    border-radius: 32px;
+    max-width: 520px;
+  }
+
+  .text-wrapper {
+    flex: 1.1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    color: global.color(gray-1000);
+    max-width: 592px;
+
+    h2 {
+      font-weight: var(--weight-medium);
+    }
+
+    .description {
+      color: global.color(gray-700);
+
+      p {
+        font-size: 18px;
+        line-height: 1.5;
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .image-text-section-idk-1225 {
+    .section-wrapper {
+      flex-direction: column-reverse;
+      gap: 40px;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .image-text-section-idk-1225 {
+    margin-top: -106px;
+    padding: 186px 0 80px; // padding top [80px] ajustado por causa do header fixo
+
+    .section-wrapper {
+      gap: 40px;
+    }
+
+    img {
+      flex: 1;
+      height: 410px;
+      border-radius: 20px;
+      max-width: 100%;
+      width: 100%;
+    }
+
+    .text-wrapper {
+      gap: 20px;
+    }
+  }
+}

@@ -1,0 +1,45 @@
+$colors: (
+  "primary": #00194c,
+  "secondary": #28a564,
+  "accent": #ffdf80,
+
+  "white": #ffffff,
+  "black": #000000,
+
+  "support-orange": #e59177,
+  "support-blue-100": #67abfb,
+  "support-blue-200": #4599fc,
+  "support-blue-900": #213763,
+  "support-green-200": #2ac675,
+
+  "gray-0": #ffffff,
+  "gray-50": #fafafa,
+  "gray-100": #f3f3f3,
+  "gray-200": #d4d4d4,
+  "gray-300": #c9c9c9,
+  "gray-350": #cecece,
+  "gray-500": #929292,
+  "gray-700": #717171,
+  "gray-800": #8f9ab0,
+  "gray-1000": #000000,
+);
+
+@use "sass:map";
+
+@function color($name) {
+  @return map.get($colors, $name);
+}
+
+@each $color, $hex in $colors {
+  .color-#{$color} {
+    color: #{$hex};
+  }
+
+  .background-#{$color} {
+    background-color: #{$hex};
+  }
+
+  .border-#{$color} {
+    border-color: #{$hex};
+  }
+}

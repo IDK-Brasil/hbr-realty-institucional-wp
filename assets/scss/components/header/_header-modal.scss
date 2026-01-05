@@ -1,0 +1,350 @@
+@use "../../global/global" as global;
+
+.modal-overlay-idk-1225 {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  align-items: center;
+  justify-content: center;
+  z-index: 100000;
+  opacity: 0;
+  display: none;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+
+  &.is-active {
+    opacity: 1;
+    display: flex;
+    pointer-events: auto;
+  }
+
+  .modal-container {
+    width: min(1038px, 100%);
+    background: global.color(gray-0);
+    border-radius: 30px;
+    display: flex;
+    overflow: hidden;
+    transform: translateY(30px);
+    transition: transform 0.4s ease;
+    padding: 40px;
+  }
+
+  &.is-active .modal-container {
+    transform: translateY(0);
+  }
+
+  .modal-col {
+    flex: 1;
+  }
+
+  .modal-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding-right: 32px;
+    border-right: 1px solid global.color(gray-200);
+  }
+
+  .modal-form h2 {
+    font-size: 42px;
+    color: global.color(gray-1000);
+    font-weight: var(--weight-medium);
+  }
+
+  .modal-form p {
+    margin-bottom: 16px;
+    font-size: 16px;
+    font-weight: var(--weight-regular);
+    color: global.color(gray-700);
+    line-height: 1.5;
+  }
+
+  .input-group {
+    position: relative;
+    margin-bottom: 20px;
+  }
+
+  .input-icon {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 24px;
+  }
+
+  input {
+    width: 100%;
+    padding: 16px 20px 16px 54px;
+    font-size: 18px;
+    font-weight: var(--weight-regular);
+    resize: none;
+    color: global.color(gray-1000);
+    border: 1px solid global.color(gray-200);
+    border-radius: 12px;
+  }
+
+  textarea {
+    width: 100%;
+    padding: 16px 20px;
+    font-size: 18px;
+    font-weight: var(--weight-regular);
+    resize: none;
+    color: global.color(gray-800);
+    border: 1px solid global.color(gray-200);
+    border-radius: 12px;
+  }
+
+  input:focus,
+  textarea:focus {
+    outline: none;
+    border-color: global.color(primary);
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    color: global.color(gray-700);
+  }
+
+  textarea {
+    height: 180px;
+  }
+
+  .checkbox-line {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    font-size: 14px;
+    color: global.color(gray-700);
+    font-weight: var(--weight-regular);
+    margin: 12px 0 32px;
+
+    input {
+      position: absolute;
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .check-icon {
+      width: 24px;
+      height: 24px;
+      border: 2px solid global.color(primary);
+      border-radius: 5px;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 14px;
+      transition: 0.2s ease;
+      cursor: pointer;
+    }
+
+    input:checked + .check-icon {
+      border-color: global.color(primary);
+      background-color: global.color(primary);
+      background-image: url("../img/check-icon.svg");
+    }
+
+    a {
+      color: inherit;
+      text-decoration: underline;
+    }
+  }
+
+  .send-btn {
+    width: 100%;
+    padding: 16px;
+    background: global.color(primary);
+    color: global.color(gray-0);
+    border: none;
+    border-radius: 12px;
+    font-weight: var(--weight-medium);
+    cursor: pointer;
+    transition: background 0.25s ease, opacity 0.3s ease;
+
+    &:disabled {
+      opacity: 0.35;
+      cursor: not-allowed;
+    }
+  }
+
+  .send-btn:hover:not(:disabled) {
+    background: global.color(support-blue-200);
+    color: global.color(primary);
+  }
+
+  .modal-info {
+    padding-left: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .modal-close {
+    background: transparent;
+    border: none;
+    font-size: 18px;
+    color: global.color(gray-1000);
+    font-weight: var(--weight-medium);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    justify-content: flex-end;
+    width: fit-content;
+    margin-left: auto;
+  }
+
+  .modal-close:hover {
+    color: global.color(primary);
+  }
+
+  .modal-content {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .find-us {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .find-us div {
+    display: flex;
+    gap: 4px;
+    flex-direction: column;
+  }
+
+  .modal-info h5 {
+    font-size: 18px;
+    color: global.color(gray-1000);
+    font-weight: var(--weight-medium);
+  }
+
+  .modal-info h6 {
+    font-size: 14px;
+    color: global.color(gray-1000);
+    font-weight: var(--weight-medium);
+  }
+
+  .modal-info p {
+    font-size: 14px;
+    color: global.color(gray-700);
+    font-weight: var(--weight-regular);
+    line-height: 1.5;
+  }
+
+  .modal-socials {
+    display: flex;
+    gap: 16px;
+    flex-direction: column;
+  }
+
+  .social-grid {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .social-btn {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 20px 16px;
+    border-radius: 10px;
+    text-align: center;
+    justify-content: center;
+    text-decoration: none;
+    color: global.color(gray-1000);
+    border: 1px solid global.color(gray-700);
+    align-items: center;
+    gap: 8px;
+    transition: background 0.25s ease, color 0.25s ease;
+  }
+
+  .social-btn img {
+    width: 32px;
+    height: 32px;
+  }
+
+  .social-btn:hover {
+    background-color: global.color(primary);
+    color: global.color(gray-0);
+
+    img {
+      filter: invert(1);
+    }
+  }
+
+  .modal-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .contact-item {
+    color: global.color(gray-700);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .contact-item a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .contact-item a:hover {
+    color: global.color(primary);
+  }
+
+  @media (max-width: 991px) {
+    .modal-container {
+      flex-direction: column;
+      width: calc(100% - 40px);
+      padding: 24px 20px;
+      border-radius: 16px;
+    }
+
+    .modal-form {
+      padding-right: 0;
+      border-right: none;
+      gap: 10px;
+    }
+
+    .modal-form h2 {
+      font-size: 24px;
+    }
+
+    .modal-form p {
+      font-size: 14px;
+      margin-bottom: 14px;
+    }
+
+    .input-group {
+      margin-bottom: 16px;
+    }
+
+    .input-icon {
+      width: 20px;
+    }
+
+    input,
+    textarea {
+      font-size: 14px;
+    }
+
+    input {
+      padding: 17px 12px 17px 42px;
+    }
+
+    textarea {
+      padding: 16px 12px;
+    }
+
+    .modal-info {
+      display: none;
+    }
+  }
+}

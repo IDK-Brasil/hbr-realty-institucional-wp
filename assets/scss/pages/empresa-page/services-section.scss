@@ -1,0 +1,171 @@
+@use "../../global/global" as global;
+
+.service-section-card-idk-1225 {
+  padding: 40px 20px 120px;
+
+  .service-section-card-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 102px;
+
+    .service-card {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 104px;
+
+      &__content {
+        order: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+      }
+
+      &__media {
+        order: 2;
+        width: 100%;
+        max-width: 100%;
+        overflow: hidden;
+
+        .image-card-swiper {
+          width: 100%;
+          max-width: 100%;
+          overflow: hidden;
+          position: relative;
+
+          img {
+            width: 100%;
+            height: 100%;
+            min-height: 100%;
+            display: block;
+            object-fit: cover;
+          }
+        }
+      }
+
+      .swiper,
+      .swiper-wrapper,
+      .swiper-slide {
+        max-width: 100%;
+        border-radius: 32px;
+      }
+
+      &__title {
+        color: global.color(gray-1000);
+        font-weight: var(--weight-medium);
+      }
+
+      &__text {
+        color: global.color(gray-700);
+        font-weight: var(--weight-regular);
+      }
+
+      // inverte a cada card par
+      &:nth-child(even) {
+        .service-card__content {
+          order: 2;
+        }
+
+        .service-card__media {
+          order: 1;
+        }
+      }
+
+      .swiper-pagination {
+        position: absolute;
+        bottom: 16px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 4px;
+        width: fit-content;
+        padding: 6px;
+        border-radius: 100px;
+        background: #00000080;
+      }
+
+      .swiper-pagination-bullet {
+        background: global.color(gray-0);
+        opacity: 0.5;
+        width: 12px;
+        height: 12px;
+        margin: 0;
+      }
+
+      .swiper-pagination-bullet-active {
+        background: global.color(gray-0);
+        opacity: 1;
+      }
+
+      .service-card__media img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .service-section-card-idk-1225 {
+    .service-section-card-wrapper {
+      .service-card {
+        grid-template-columns: 1fr;
+        gap: 40px;
+
+        &__content,
+        &__media {
+          order: initial;
+        }
+
+        .swiper,
+        .swiper-wrapper,
+        .swiper-slide {
+          height: 410px;
+        }
+
+        &:nth-child(even) {
+          .service-card__content {
+            order: 1;
+          }
+
+          .service-card__media {
+            order: 2;
+          }
+        }
+      }
+    }
+
+    .service-card__media {
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  .service-section-card-idk-1225 {
+    padding: 40px 0 0 0;
+
+    .container {
+      padding: 0;
+    }
+
+    .service-card {
+      grid-template-columns: 1fr;
+      gap: 24px;
+      margin-bottom: 0;
+
+      &__content {
+        padding: 0 20px;
+        gap: 20px;
+      }
+
+      .swiper,
+      .swiper-wrapper,
+      .swiper-slide {
+        border-radius: 0 !important;
+      }
+    }
+  }
+}

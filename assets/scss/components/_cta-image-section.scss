@@ -1,0 +1,62 @@
+@use "../global/global" as global;
+
+.cta-section-idk-1225 {
+  padding: 0 20px;
+  border-radius: 24px;
+
+  .container {
+    border-radius: 24px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+  }
+
+  .text-wrapper {
+    padding: 40px 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+
+    h2 {
+      text-align: center;
+      color: global.color(gray-0);
+      font-weight: var(--weight-medium);
+    }
+
+    .description * {
+      text-align: center;
+      color: global.color(gray-0);
+      font-weight: var(--weight-regular);
+    }
+  }
+
+  .arrow {
+    rotate: -45deg;
+  }
+
+  .press-cta {
+    margin-top: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .cta-section-idk-1225 {
+    height: 400px;
+
+    .container {
+      padding: 10px;
+    }
+
+    .text-wrapper {
+      padding: 0;
+    }
+
+    .description * {
+      font-size: 14px;
+    }
+  }
+}
