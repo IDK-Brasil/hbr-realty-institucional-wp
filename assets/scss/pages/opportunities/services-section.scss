@@ -1,0 +1,121 @@
+@use "../../global/global" as global;
+
+.service-section-opportunities-card-idk-1225 {
+  padding: 120px 20px 120px;
+
+  .service-section-card-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 102px;
+
+    .service-card {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 70px;
+      justify-items: start;
+
+      &__content {
+        order: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        max-width: 525px;
+      }
+
+      &__media {
+        order: 2;
+        width: 100%;
+        max-width: 100%;
+        overflow: hidden;
+
+        img {
+          width: 100%;
+          max-width: 592px;
+          height: 582px;
+          min-height: 100%;
+          display: block;
+          object-fit: cover;
+          border-radius: 32px;
+        }
+      }
+
+      &__title {
+        color: global.color(gray-1000);
+        font-weight: var(--weight-medium);
+        line-height: 1.2;
+      }
+
+      &__text {
+        color: global.color(gray-700);
+        font-weight: var(--weight-regular);
+        line-height: 1.5;
+      }
+
+      // inverte a cada card par
+      &:nth-child(even) {
+        justify-items: end;
+
+        .service-card__content {
+          order: 2;
+        }
+
+        .service-card__media {
+          order: 1;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .service-section-opportunities-card-idk-1225 {
+    border-top: 1px solid global.color(gray-200);
+    padding: 80px 0 0;
+
+    .container {
+      padding: 0;
+    }
+
+    .service-section-card-wrapper {
+      .service-card {
+        grid-template-columns: 1fr;
+        width: 100%;
+        gap: 40px;
+
+        &__content,
+        &__media {
+          order: initial;
+        }
+
+        &__content {
+          padding: 0 20px;
+          max-width: 100%;
+        }
+
+        &__media {
+          img {
+            max-width: 100%;
+            height: 410px;
+            border-radius: 0;
+          }
+        }
+
+        &:nth-child(even) {
+          .service-card__content {
+            order: 1;
+          }
+
+          .service-card__media {
+            order: 2;
+          }
+        }
+      }
+    }
+
+    .service-card__media {
+      width: 100%;
+    }
+  }
+}
