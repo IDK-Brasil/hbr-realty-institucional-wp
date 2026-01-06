@@ -1,5 +1,5 @@
 <?php
-/* Template Name: ComVem */
+/* Template Name: Plataformas - ComVem */
 get_header();
 ?>
 
@@ -11,7 +11,26 @@ get_header();
   $dataImageSection = get_field('secao_sobre_comvem', $id);
   $dataCta = get_field('secao_cta_comvem', $id);
 
-  load_component('template-parts/comvem-page/hero-banner');
+  $bannerDataRow = get_field('banner_section_comvem', $id);
+  $bannerData = [];
+
+  if (is_array($bannerDataRow)) {
+    $bannerData = [
+      'bg_img'   => is_array($bannerDataRow['imagem_banner_section'] ?? null)
+        ? ($bannerDataRow['imagem_banner_section']['url'] ?? '')
+        : ($bannerDataRow['imagem_banner_section'] ?? ''),
+      'title'    => null,
+      'subtitle' => $bannerDataRow['subtitle_banner_section'] ?? null,
+      'logo'     => is_array($bannerDataRow['logo_banner_section'] ?? null)
+        ? ($bannerDataRow['logo_banner_section']['url'] ?? '')
+        : ($bannerDataRow['logo_banner_section'] ?? ''),
+      'variant'  => 'comvem',
+      'scrollTo' => '#sobre',
+    ];
+  }
+
+  load_component('global/page-simple-banner', null, $bannerData);
+
 
   load_component(
     'global/image-text-section',
