@@ -1,0 +1,89 @@
+@use "../global/global" as global;
+
+.text-colorful-forms-idk-1225 {
+  padding: 160px 20px 0;
+  margin-top: -80px;
+
+  .container-lg {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 90px;
+    justify-content: center;
+    align-items: center;
+    max-width: 1568px;
+  }
+
+  .text-colorful-forms-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .text-colorful-forms-bg-left {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 332px;
+    height: 166px;
+    border-left-width: 39px;
+    border-left-style: solid;
+    border-top-width: 39px;
+    border-top-style: solid;
+  }
+
+  .text-colorful-forms-bg-right {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 332px;
+    height: 166px;
+    border-right-width: 39px;
+    border-right-style: solid;
+    border-bottom-width: 39px;
+    border-bottom-style: solid;
+  }
+
+  .text-colorful-forms-text-wrapper {
+    min-height: 366px;
+    max-width: 1168px;
+    padding: 80px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+
+    h2 {
+      font-weight: var(--weight-medium);
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .text-colorful-forms-idk-1225 {
+    padding: 186px 38px 80px 20px;
+    margin-top: -106px;
+
+    .text-colorful-forms-bg-left,
+    .text-colorful-forms-bg-right {
+      display: none;
+    }
+
+    .text-colorful-forms-text-wrapper {
+      min-height: fit-content;
+      padding: 0;
+      text-align: left;
+    }
+
+    h2 {
+      font-size: 24px;
+    }
+
+    .container-lg {
+      gap: 32px;
+    }
+  }
+}
