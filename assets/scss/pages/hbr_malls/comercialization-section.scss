@@ -1,0 +1,41 @@
+@use "../../global/global" as global;
+
+.comercialization-section-hbr-malls-idk-1225 {
+  margin-top: 40px;
+  background: global.color(gray-50);
+  padding: 80px 20px;
+
+  .comercialization-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .section-title {
+    font-size: 64px;
+    font-weight: var(--weight-medium);
+  }
+
+  .section-description {
+    font-weight: var(--weight-regular);
+    max-width: 624px;
+    color: global.color(gray-700);
+    text-align: center;
+  }
+
+  .primary-btn-blue {
+    margin-top: 8px;
+  }
+
+  @media (max-width: 768px) {
+    .section-title {
+      font-size: 32px;
+    }
+
+    .section-description {
+      max-width: 354px;
+    }
+  }
+}

@@ -59,4 +59,12 @@ function idk_enqueue_scripts()
         '1.0',
         true
     );
+    // Malls Section
+    wp_enqueue_script(
+        'malls-section-js',
+        get_template_directory_uri() . '/assets/js/hbr-malls/malls-section.js',
+        [],
+        '1.0',
+        true
+    );
 }

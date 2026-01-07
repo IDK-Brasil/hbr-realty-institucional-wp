@@ -1,0 +1,75 @@
+@use "../../global/global" as global;
+
+.numbers-section-hbr-malls-idk-1225 {
+  margin: 138px 0 80px;
+  padding: 80px 20px;
+  background-color: global.color(gray-50);
+
+  .container {
+    max-width: 1218px;
+  }
+
+  .numbers-section-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .number-item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 18px;
+  }
+
+  .number {
+    font-size: 80px;
+    line-height: 1;
+    font-family: Aktiv Grotesk;
+    font-weight: var(--weight-light);
+    color: global.color(gray-1000);
+  }
+
+  .description {
+    font-weight: var(--weight-regular);
+    color: global.color(gray-700);
+  }
+}
+
+@media (max-width: 768px) {
+  .numbers-section-hbr-malls-idk-1225 {
+    margin: 0;
+    padding: 80px 20px;
+
+    .numbers-section-wrapper {
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .number {
+      font-size: 64px;
+    }
+
+    .number-item {
+      width: 100%;
+      gap: 12px;
+      border-bottom: 1px solid global.color(gray-200);
+      padding: 60px 0;
+
+      &:first-child {
+        padding-top: 0;
+      }
+
+      &:last-child {
+        padding-bottom: 0;
+        border-bottom: none;
+      }
+    }
+  }
+}

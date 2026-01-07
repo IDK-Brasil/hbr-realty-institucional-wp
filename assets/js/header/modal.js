@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   const modal = document.getElementById("contactModal");
   const openBtns = document.querySelectorAll(
-    ".desktop-btn, .mobile-cta, .press-cta"
+    ".desktop-btn, .mobile-cta, .press-cta, .open-contact-modal"
   );
   const closeBtn = document.querySelector(".modal-close");
 

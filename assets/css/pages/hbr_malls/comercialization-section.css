@@ -1524,189 +1524,38 @@ b, strong {
   flex: 1;
 }
 
-.hero-banner-idk-1225 {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  min-height: 500px;
-  overflow: hidden;
+.comercialization-section-hbr-malls-idk-1225 {
+  margin-top: 40px;
+  background: #fafafa;
+  padding: 80px 20px;
 }
-.hero-banner-idk-1225 img.hero-bg,
-.hero-banner-idk-1225 video.hero-video {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 1;
-  filter: brightness(0.6);
-}
-.hero-banner-idk-1225 .hero-content {
-  position: absolute;
-  inset: 0;
-  z-index: 2;
+.comercialization-section-hbr-malls-idk-1225 .comercialization-wrapper {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  text-align: center;
-  padding: 20px;
-  max-width: 858px;
-  gap: 20px;
-  margin: 0 auto;
-}
-.hero-banner-idk-1225 .hero-content h1 {
-  font-weight: var(--weight-semibold);
-  color: #ffffff;
-}
-.hero-banner-idk-1225 .hero-content .subtitle {
-  display: flex;
-  flex-direction: column;
-  max-width: 590px;
-}
-.hero-banner-idk-1225 .hero-content .subtitle-empresa {
-  max-width: 760px;
-}
-.hero-banner-idk-1225 .hero-content p {
-  color: #ffffff;
-}
-.hero-banner-idk-1225 .hero-content .hero-buttons {
-  margin-top: 12px;
-  display: flex;
+  align-items: center;
   gap: 12px;
-  width: 100%;
-  justify-content: center;
 }
-.hero-banner-idk-1225 .hero-content-hbr_malls {
-  max-width: 916px;
+.comercialization-section-hbr-malls-idk-1225 .section-title {
+  font-size: 64px;
+  font-weight: var(--weight-medium);
 }
-.hero-banner-idk-1225 .hero-content-empresa {
-  max-width: 760px;
+.comercialization-section-hbr-malls-idk-1225 .section-description {
+  font-weight: var(--weight-regular);
+  max-width: 624px;
+  color: #717171;
+  text-align: center;
 }
-.hero-banner-idk-1225 .scroll-down-wrapper {
-  position: absolute;
-  bottom: 32px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  align-items: center;
-  width: 100%;
+.comercialization-section-hbr-malls-idk-1225 .primary-btn-blue {
+  margin-top: 8px;
 }
-.hero-banner-idk-1225 .scroll-down {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 8px;
-}
-.hero-banner-idk-1225 .scroll-down p {
-  color: #ffffff;
-  font-weight: var(--weight-semibold);
-}
-.hero-banner-idk-1225 .scroll-down .mouse-icon {
-  width: 24px;
-  height: 24px;
-}
-.hero-banner-idk-1225 .scroll-down:hover {
-  cursor: pointer;
-}
-.hero-banner-idk-1225 .scroll-down:hover .mouse-icon {
-  animation: scroll-down 1s infinite;
-}
-.hero-banner-idk-1225 .hero-content-comvem img {
-  height: 80px;
-  width: auto;
-  margin-bottom: 22px;
-}
-@media (max-width: 480px) {
-  .hero-banner-idk-1225 .hero-content-comvem {
-    align-items: center;
+@media (max-width: 768px) {
+  .comercialization-section-hbr-malls-idk-1225 .section-title {
+    font-size: 32px;
   }
-  .hero-banner-idk-1225 .hero-content-comvem img {
-    height: 60px;
-    margin-bottom: 0;
-  }
-}
-.hero-banner-idk-1225 .hero-bg,
-.hero-banner-idk-1225 .hero-bg-swiper,
-.hero-banner-idk-1225 .swiper {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-}
-.hero-banner-idk-1225 .swiper-wrapper {
-  height: 100%;
-}
-.hero-banner-idk-1225 .swiper-slide {
-  height: 100%;
-  display: flex;
-}
-.hero-banner-idk-1225 .swiper-slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.hero-banner-idk-1225 .hero-swiper-pagination {
-  position: relative;
-  display: flex;
-  gap: 4px;
-  background: rgba(255, 255, 255, 0.2705882353);
-  padding: 6px 6px;
-  border-radius: 999px;
-  width: fit-content !important;
-  bottom: 0 !important;
-}
-.hero-banner-idk-1225 .hero-swiper-pagination .swiper-pagination-bullet {
-  width: 12px;
-  height: 12px;
-  background: #ffffff;
-  opacity: 0.5;
-  margin: 0 !important;
-}
-.hero-banner-idk-1225 .hero-swiper-pagination .swiper-pagination-bullet-active {
-  opacity: 1;
-}
-@media (max-width: 480px) {
-  .hero-banner-idk-1225 .hero-content {
-    align-items: flex-start;
-    gap: 16px;
-    justify-content: center;
-  }
-  .hero-banner-idk-1225 .hero-content h1 {
-    text-align: left;
-  }
-  .hero-banner-idk-1225 .subtitle {
-    align-items: flex-start;
-    max-width: 100%;
-  }
-  .hero-banner-idk-1225 .subtitle p {
-    text-align: left;
-  }
-  .hero-banner-idk-1225 .hero-buttons {
-    margin-top: 16px;
-  }
-  .hero-banner-idk-1225 .scroll-down {
-    width: 100%;
-    justify-content: center;
-  }
-  .hero-banner-idk-1225 .scroll-down-wrapper:has(.hero-swiper-pagination) {
-    bottom: 24px;
+  .comercialization-section-hbr-malls-idk-1225 .section-description {
+    max-width: 354px;
   }
 }
 
-@keyframes scroll-down {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(8px);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-
-/*# sourceMappingURL=hero.css.map */
+/*# sourceMappingURL=comercialization-section.css.map */
