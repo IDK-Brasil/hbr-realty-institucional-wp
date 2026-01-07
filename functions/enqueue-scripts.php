@@ -51,4 +51,12 @@ function idk_enqueue_scripts()
         '1.0',
         true
     );
+    // Banner
+    wp_enqueue_script(
+        'main-banner-js',
+        get_template_directory_uri() . '/assets/js/banner/main-banner.js',
+        [],
+        '1.0',
+        true
+    );
 }

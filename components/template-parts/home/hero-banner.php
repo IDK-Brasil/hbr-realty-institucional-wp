@@ -4,7 +4,7 @@ $banner_rows = get_field('banner_section_home', $id);
 
 if ($banner_rows && is_array($banner_rows)) {
     $banner  = $banner_rows[0];
-    $bg_tipo = $banner['type_banner_section_home']; // video ou imagem
+    $bg_tipo = $banner['type_banner_section_home'];
     $bg_img  = is_array($banner['imagem_banner_section_home'])
         ? ($banner['imagem_banner_section_home']['url'] ?? '')
         : $banner['imagem_banner_section_home'];
@@ -51,9 +51,10 @@ if ($banner_rows && is_array($banner_rows)) {
         </div>
     </div>
 
-    <a class="scroll-down" href="#portfolio">
-        <p> Confira mais conteúdos abaixo </p>
-
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/mouse-scroll-down.svg" alt="Scroll para baixo" class="mouse-icon">
-    </a>
+    <div class="scroll-down-wrapper">
+        <a class="scroll-down" href="#portfolio">
+            <p> Confira mais conteúdos abaixo </p>
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/mouse-scroll-down.svg" alt="Scroll para baixo" class="mouse-icon">
+        </a>
+    </div>
 </section>

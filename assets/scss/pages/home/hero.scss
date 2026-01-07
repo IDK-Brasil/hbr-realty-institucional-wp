@@ -60,16 +60,28 @@
     }
   }
 
+  .hero-content-hbr_malls {
+    max-width: 916px;
+  }
+
   .hero-content-empresa {
     max-width: 760px;
   }
 
-  .scroll-down {
+  .scroll-down-wrapper {
     position: absolute;
     bottom: 32px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    width: 100%;
+  }
+
+  .scroll-down {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -94,12 +106,75 @@
     }
   }
 
+  .hero-content-comvem {
+    img {
+      height: 80px;
+      width: auto;
+      margin-bottom: 22px;
+    }
+
+    @media (max-width: 480px) {
+      align-items: center;
+
+      img {
+        height: 60px;
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .hero-bg,
+  .hero-bg-swiper,
+  .swiper {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .swiper-wrapper {
+    height: 100%;
+  }
+
+  .swiper-slide {
+    height: 100%;
+    display: flex;
+  }
+
+  .swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .hero-swiper-pagination {
+    position: relative;
+    display: flex;
+    gap: 4px;
+    background: #ffffff45;
+    padding: 6px 6px;
+    border-radius: 999px;
+    width: fit-content !important;
+    bottom: 0 !important;
+
+    .swiper-pagination-bullet {
+      width: 12px;
+      height: 12px;
+      background: global.color(gray-0);
+      opacity: 0.5;
+      margin: 0 !important;
+    }
+
+    .swiper-pagination-bullet-active {
+      opacity: 1;
+    }
+  }
+
   @media (max-width: 480px) {
     .hero-content {
       align-items: flex-start;
       gap: 16px;
-      justify-content: flex-start;
-      margin-top: 67%;
+      justify-content: center;
 
       h1 {
         text-align: left;
@@ -123,22 +198,12 @@
       width: 100%;
       justify-content: center;
     }
-  }
 
-  .hero-content-comvem {
-    img {
-      height: 80px;
-      width: auto;
-      margin-bottom: 22px;
-    }
-
-    @media (max-width: 480px) {
-      align-items: center;
-
-      img {
-        height: 60px;
-        margin-bottom: 0;
-      }
+    // .scroll-down-wrapper {
+    //   bottom: 24px;
+    // se o .scroll-down-wrapper possuir como filho o .swiper-pagination, ele fica fixo ao scroll
+    .scroll-down-wrapper:has(.hero-swiper-pagination) {
+      bottom: 24px;
     }
   }
 }

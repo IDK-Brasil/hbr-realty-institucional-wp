@@ -2,17 +2,36 @@
 
 /**
  * Espera receber:
- * $bg_img   (string|null)
- * $title    (string|null)
- * $subtitle (string|null)
- * $logo     (string|null)
- * $variant  (string|null) // empresa | comvem | default
- * $scrollTo (string|null)
+ * $bg_img   (string|array|null) // string = 1 imagem | array = várias imagens
+ * $title
+ * $subtitle
+ * $logo
+ * $variant
+ * $scrollTo
  */
 ?>
 
 <section class="hero-banner-idk-1225 <?php echo esc_attr($variant ?? ''); ?>">
-    <?php if (!empty($bg_img)): ?>
+
+    <?php if (is_array($bg_img) && !empty($bg_img)): ?>
+        <!-- CARROSSEL -->
+        <div class="hero-bg-swiper swiper">
+            <div class="swiper-wrapper">
+                <?php foreach ($bg_img as $img): ?>
+                    <?php
+                    $url = is_array($img) ? ($img['url'] ?? '') : $img;
+                    ?>
+                    <?php if ($url): ?>
+                        <div class="swiper-slide">
+                            <img src="<?php echo esc_url($url); ?>" alt="">
+                        </div>
+                    <?php endif; ?>
+                <?php endforeach; ?>
+            </div>
+        </div>
+
+    <?php elseif (is_string($bg_img) && $bg_img): ?>
+        <!-- IMAGEM ÚNICA -->
         <img src="<?php echo esc_url($bg_img); ?>" class="hero-bg" alt="">
     <?php endif; ?>
 
@@ -32,11 +51,17 @@
         <?php endif; ?>
     </div>
 
-    <a class="scroll-down" href="<?php echo esc_url($scrollTo ?? '#'); ?>">
-        <p>Confira mais conteúdos abaixo</p>
-        <img
-            src="<?php echo get_template_directory_uri(); ?>/assets/img/mouse-scroll-down.svg"
-            alt="Scroll para baixo"
-            class="mouse-icon">
-    </a>
+    <div class="scroll-down-wrapper">
+        <a class="scroll-down" href="<?php echo esc_url($scrollTo ?? '#'); ?>">
+            <p>Confira mais conteúdos abaixo</p>
+            <img
+                src="<?php echo get_template_directory_uri(); ?>/assets/img/mouse-scroll-down.svg"
+                alt="Scroll para baixo"
+                class="mouse-icon">
+        </a>
+
+        <?php if (is_array($bg_img) && !empty($bg_img)): ?>
+            <div class="hero-swiper-pagination"></div>
+        <?php endif; ?>
+    </div>
 </section>
