@@ -1,21 +1,28 @@
-<?php load_component('header')?>
+<?php
+/* Template Name: 404 */
+?>
 
-<main class="view view__not-found relative background--white">
-    <section class=" content mt-60 container">
-        <h1 class="ff-worksans fw-medium fs-42 fs-42__lg d-block mb-24 color--primary-blue">Ops!
+<?php load_component('header') ?>
 
-            Algo deu errado.</h1>
-        <p class="ff-worksans fs-16 fs-16__lg mb-24 color--primary-navy">Infelizmente, não conseguimos encontrar a
-            página
-            que você está procurando. Isso pode ter acontecido porque o link está incorreto, a página foi movida ou
-            simplesmente deixou de existir.</p>
-        <p class="ff-worksans fs-16 fs-16__lg mb-24 color--primary-navy">Mas não se preocupe! Você pode voltar para
-            a
-            nossa
-            página inicial clicando no botão abaixo:</p>
+<main class="not-found-page-idk-1225">
+    <section class="content-section">
+        <div class="content-wrapper">
+            <h1>Essa página não foi encontrada...</h1>
 
-        <a class="ff-worksans fs-18__lg" href="/"> Ir para Home</a>
+            <h6>Retorne ao início e continue explorando o universo HBR Realty.</h6>
+
+            <a class="btn primary-btn-blue" href="/"> Voltar ao início
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/arrow-right.svg" alt="">
+            </a>
+        </div>
+
+        <div class="shape-container">
+            <h1>404</h1>
+
+            <span class="not-found-shape not-found-shape-left"></span>
+            <span class="not-found-shape not-found-shape-right"></span>
+        </div>
     </section>
 </main>
 
-<?php load_component('footer')?>
+<?php load_component('footer') ?>
