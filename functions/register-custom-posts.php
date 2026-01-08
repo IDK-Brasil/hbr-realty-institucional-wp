@@ -9,46 +9,55 @@ function create_enterprises_post_type()
             'singular_name'      => 'Empreendimento',
             'menu_name'          => 'Empreendimentos',
             'name_admin_bar'     => 'Empreendimentos',
-            'add_new'            => 'Adicionar novo empreendimento',
-            'add_new_item'       => 'Adicionar novo empreendimento',
-            'new_item'           => 'Novo empreendimento',
-            'edit_item'          => 'Editar empreendimento',
-            'view_item'          => 'Ver empreendimento',
-            'all_items'          => 'Todos empreendimentos',
-            'search_items'       => 'Buscar empreendimento',
-            'not_found'          => 'Nenhum empreendimento encontrado.',
-            'not_found_in_trash' => 'Não foi encontrado nenhum empreendimento na lixeira.',
+            'add_new'            => 'Adicionar novo Empreendimento',
+            'add_new_item'       => 'Adicionar novo Empreendimento',
+            'new_item'           => 'Novo Empreendimento',
+            'edit_item'          => 'Editar Empreendimento',
+            'view_item'          => 'Ver Empreendimento',
+            'all_items'          => 'Todos Empreendimentos',
+            'search_items'       => 'Buscar Empreendimento',
+            'not_found'          => 'Nenhum Empreendimento encontrado.',
+            'not_found_in_trash' => 'Não foi encontrado nenhum Empreendimento na lixeira.',
         ],
         'public'       => true,
         'has_archive'  => true,
         'rewrite'      => ['slug' => 'empreendimento'],
-        'supports'     => ['title', 'editor', 'thumbnail', 'excerpt', 'comments'],
+        'supports'     => ['title'],
         'show_in_rest' => true,
-        'menu_icon'    => 'dashicons-welcome-add-page',
+        'menu_icon'    => 'dashicons-building',
     ]);
-
-    register_taxonomy(
-        'enterprise_category', // slug da taxonomia
-        'enterprises',         // post type associado
-        [
-            'labels'       => [
-                'name'              => 'Categorias de Empreendimentos',
-                'singular_name'     => 'Categoria de Empreendimento',
-                'search_items'      => 'Buscar Categorias',
-                'all_items'         => 'Todas Categorias',
-                'parent_item'       => 'Categoria Pai',
-                'parent_item_colon' => 'Categoria Pai:',
-                'edit_item'         => 'Editar Categoria',
-                'update_item'       => 'Atualizar Categoria',
-                'add_new_item'      => 'Adicionar Nova Categoria',
-                'new_item_name'     => 'Novo nome da Categoria',
-                'menu_name'         => 'Categorias de Empreendimentos',
-            ],
-            'hierarchical' => true,
-            'show_in_rest' => true, // habilita no editor Gutenberg
-            'rewrite'      => ['slug' => 'categoria-empreendimento'],
-        ]
-    );
 }
 
 add_action('init', 'create_enterprises_post_type');
+
+
+
+function create_units_post_type()
+{
+    // Registro do Custom Post Type
+    register_post_type('units', [
+        'labels'       => [
+            'name'               => 'Unidades Comvem',
+            'singular_name'      => 'Unidade ComVem',
+            'menu_name'          => 'Unidades Comvem',
+            'name_admin_bar'     => 'Unidades Comvem',
+            'add_new'            => 'Adicionar nova Unidade ComVem',
+            'add_new_item'       => 'Adicionar nova Unidade ComVem',
+            'new_item'           => 'Nova Unidade ComVem',
+            'edit_item'          => 'Editar Unidade ComVem',
+            'view_item'          => 'Ver Unidade ComVem',
+            'all_items'          => 'Todas Unidades Comvem',
+            'search_items'       => 'Buscar Unidade ComVem',
+            'not_found'          => 'Nenhuma Unidade encontrada.',
+            'not_found_in_trash' => 'Não foi encontrada nenhuma Unidade na lixeira.',
+        ],
+        'public'       => true,
+        'has_archive'  => true,
+        'rewrite'      => ['slug' => 'unidade-comvem'],
+        'supports'     => ['title'],
+        'show_in_rest' => true,
+        'menu_icon'    => 'dashicons-products',
+    ]);
+}
+
+add_action('init', 'create_units_post_type');

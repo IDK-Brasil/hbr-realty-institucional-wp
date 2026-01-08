@@ -1,16 +1,14 @@
 <?php
 $units = get_posts([
-    'post_type'      => 'units',
+    'post_type'      => 'enterprises',
     'posts_per_page' => -1,
 ]);
 
-if (!$units) {
-    return;
-}
+if (!$units) return;
 $total = count($units);
 ?>
 
-<section class="units-carousel-idk-1225">
+<section class="units-carousel-triple-a-idk-1225">
     <div class="container">
         <h2 class="units-title">Conheça nossas unidades</h2>
     </div>
@@ -26,10 +24,9 @@ $total = count($units);
                     <?php foreach ($units as $unit): ?>
 
                         <?php
-                        $title = get_field('nome_da_unidade_comvem', $unit->ID);
-                        $info  = get_field('informacoes_unidade_comvem', $unit->ID);
-                        $link  = get_field('link_da_unidade_comvem', $unit->ID);
-                        $image = get_field('imagem_da_unidade_comvem', $unit->ID);
+                        $title = get_field('nome_da_unidade_empreendimentos', $unit->ID);
+                        $info  = get_field('informacoes_unidade_empreendimentos', $unit->ID);
+                        $image = get_field('galeria_de_imagens_da_unidade_empreendimentos', $unit->ID)[0];
 
                         $image_url = is_array($image) && !empty($image['url']) ? $image['url'] : '';
                         ?>
@@ -52,11 +49,9 @@ $total = count($units);
                                     </ul>
                                 <?php endif; ?>
 
-                                <?php if ($link) : ?>
-                                    <a href="<?php echo esc_url($link); ?>" class="primary-btn-green" target="_blank">
-                                        Conferir unidade
-                                    </a>
-                                <?php endif; ?>
+                                <button href="<?php echo get_the_permalink($unit->ID); ?>" class="primary-btn-white">
+                                    Conferir unidade
+                                </button>
                             </div>
 
                         </article>

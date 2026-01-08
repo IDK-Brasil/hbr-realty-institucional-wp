@@ -1536,55 +1536,55 @@ b, strong {
   flex: 1;
 }
 
-.numbers-section-idk-1225 {
+.stats-section-idk-1225 {
   padding: 170px 0 120px;
   position: relative;
 }
-.numbers-section-idk-1225 .numbers-grid {
+.stats-section-idk-1225 .numbers-grid {
   display: flex;
   flex-direction: row;
   gap: 40px;
   justify-content: space-between;
 }
-.numbers-section-idk-1225 .number-card {
+.stats-section-idk-1225 .number-card {
   display: flex;
   flex-direction: column;
   gap: 16px;
   align-items: flex-start;
 }
-.numbers-section-idk-1225 .flag {
+.stats-section-idk-1225 .flag {
   background: #00194c;
   color: #ffffff;
   padding: 8px 10px;
   border-radius: 34px;
   font-weight: var(--weight-medium);
 }
-.numbers-section-idk-1225 .number-line {
+.stats-section-idk-1225 .number-line {
   display: flex;
   flex-direction: row;
   align-items: center;
   color: #000000;
 }
-.numbers-section-idk-1225 .number-line .number,
-.numbers-section-idk-1225 .number-line .number-desc {
+.stats-section-idk-1225 .number-line .number,
+.stats-section-idk-1225 .number-line .number-desc {
   font-size: 64px;
   font-weight: var(--weight-light);
   line-height: 1;
 }
-.numbers-section-idk-1225 .desc {
+.stats-section-idk-1225 .desc {
   color: #717171;
   font-weight: var(--weight-regular);
   max-width: 260px;
   margin-bottom: 14px;
 }
-.numbers-section-idk-1225 img.card-image {
+.stats-section-idk-1225 img.card-image {
   max-width: 416px;
   width: 100%;
   border-radius: 32px;
   height: 500px;
   object-fit: cover;
 }
-.numbers-section-idk-1225 img.circle-vector {
+.stats-section-idk-1225 img.circle-vector {
   position: absolute;
   bottom: 0;
   right: 0;

@@ -1,48 +1,48 @@
 <?php
-    $id                  = get_the_ID();
-    $stats_section_group = get_field('numbers_section_home', $id);
+$id                  = get_the_ID();
+$stats_section_group = get_field('numbers_section_home', $id);
 
-    if ($stats_section_group && is_array($stats_section_group)) {
-        $firstColumn  = $stats_section_group['column_1_numbers_section_home'] ?? null;
-        $secondColumn = $stats_section_group['column_2_numbers_section_home'] ?? null;
+if ($stats_section_group && is_array($stats_section_group)) {
+    $firstColumn  = $stats_section_group['column_1_numbers_section_home'] ?? null;
+    $secondColumn = $stats_section_group['column_2_numbers_section_home'] ?? null;
 
-        $firstColumnFlag       = $firstColumn['title_column_1_numbers_section_home'] ?? null;
-        $firstColumnNumber     = $firstColumn['count_column_1_numbers_section_home'] ?? null;
-        $firstColumnNumberText = $firstColumn['info_number_column_1_numbers_section_home'] ?? null;
-        $firstColumnDesc       = $firstColumn['description_column_1_numbers_section_home'] ?? null;
-        $firstColumnImageRaw   = $firstColumn['image_column_1_numbers_section_home'] ?? null;
+    $firstColumnFlag       = $firstColumn['title_column_1_numbers_section_home'] ?? null;
+    $firstColumnNumber     = $firstColumn['count_column_1_numbers_section_home'] ?? null;
+    $firstColumnNumberText = $firstColumn['info_number_column_1_numbers_section_home'] ?? null;
+    $firstColumnDesc       = $firstColumn['description_column_1_numbers_section_home'] ?? null;
+    $firstColumnImageRaw   = $firstColumn['image_column_1_numbers_section_home'] ?? null;
 
-        $secondColumnFlag       = $secondColumn['title_column_2_numbers_section_home'] ?? null;
-        $secondColumnNumber     = $secondColumn['count_column_2_numbers_section_home'] ?? null;
-        $secondColumnNumberText = $secondColumn['info_number_column_2_numbers_section_home'] ?? null;
-        $secondColumnDesc       = $secondColumn['description_column_2_numbers_section_home'] ?? null;
-        $secondColumnImageRaw   = $secondColumn['image_column_2_numbers_section_home'] ?? null;
+    $secondColumnFlag       = $secondColumn['title_column_2_numbers_section_home'] ?? null;
+    $secondColumnNumber     = $secondColumn['count_column_2_numbers_section_home'] ?? null;
+    $secondColumnNumberText = $secondColumn['info_number_column_2_numbers_section_home'] ?? null;
+    $secondColumnDesc       = $secondColumn['description_column_2_numbers_section_home'] ?? null;
+    $secondColumnImageRaw   = $secondColumn['image_column_2_numbers_section_home'] ?? null;
 
-        function normalize_img($raw)
-        {
-            if (is_array($raw)) {
-                return $raw['url'] ?? null;
-            }
-
-            if (is_int($raw)) {
-                return wp_get_attachment_url($raw);
-            }
-
-            if (is_string($raw)) {
-                return $raw;
-            }
-
-            return null;
+    function normalize_img($raw)
+    {
+        if (is_array($raw)) {
+            return $raw['url'] ?? null;
         }
 
-        $firstColumnImage  = normalize_img($firstColumnImageRaw);
-        $secondColumnImage = normalize_img($secondColumnImageRaw);
-    } else {
-        $firstColumnFlag = $firstColumnNumber = $firstColumnNumberText = $firstColumnDesc = $firstColumnImage = null;
+        if (is_int($raw)) {
+            return wp_get_attachment_url($raw);
+        }
+
+        if (is_string($raw)) {
+            return $raw;
+        }
+
+        return null;
     }
+
+    $firstColumnImage  = normalize_img($firstColumnImageRaw);
+    $secondColumnImage = normalize_img($secondColumnImageRaw);
+} else {
+    $firstColumnFlag = $firstColumnNumber = $firstColumnNumberText = $firstColumnDesc = $firstColumnImage = null;
+}
 ?>
 
-<section class="numbers-section-idk-1225">
+<section class="stats-section-idk-1225">
     <div class="container">
         <div class="numbers-grid">
             <div class="number-card">

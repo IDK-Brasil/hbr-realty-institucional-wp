@@ -1,0 +1,110 @@
+@use "../global/global" as global;
+
+.image-text-section-form-idk-1225 {
+  margin-top: -90px;
+  padding: 170px 0 80px;
+
+  .container {
+    max-width: 1356px;
+    padding: 0 20px 0 120px;
+  }
+
+  .section-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 104px;
+  }
+
+  img {
+    flex: 0.9;
+    height: 582px;
+    object-fit: cover;
+    border-radius: 32px;
+    max-width: 520px;
+  }
+
+  .text-wrapper {
+    flex: 1.1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    color: global.color(gray-1000);
+    max-width: 592px;
+    position: relative;
+
+    h2 {
+      font-weight: var(--weight-medium);
+      max-width: 530px;
+    }
+
+    .description {
+      color: global.color(gray-700);
+
+      p {
+        font-size: 18px;
+        line-height: 1.5;
+      }
+    }
+  }
+
+  .bg-left {
+    position: absolute;
+    left: -100px;
+    bottom: -100px;
+    width: 332px;
+    height: 166px;
+    border-left-width: 39px;
+    border-left-style: solid;
+    border-bottom-width: 39px;
+    border-bottom-style: solid;
+  }
+}
+
+@media (max-width: 1024px) {
+  .image-text-section-form-idk-1225 {
+    .container {
+      padding-left: 80px;
+    }
+
+    .bg-left {
+      left: -60px;
+      bottom: -100px;
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .image-text-section-form-idk-1225 {
+    margin-top: -106px;
+    padding: 186px 0 80px; // padding top [80px] ajustado por causa do header fixo
+
+    .container {
+      padding: 0 20px;
+    }
+
+    .section-wrapper {
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    img {
+      flex: 1;
+      height: 410px;
+      max-height: 410px;
+      border-radius: 20px;
+      max-width: 100%;
+      width: 100%;
+    }
+
+    .text-wrapper {
+      gap: 20px;
+      max-width: 100%;
+    }
+
+    .bg-left {
+      display: none;
+    }
+  }
+}
