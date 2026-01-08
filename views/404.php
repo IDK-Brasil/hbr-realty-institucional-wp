@@ -1,10 +1,10 @@
 <?php
-/* Template Name: 404 */
+/* Template Name: Página Não Encontrada [404] */
 ?>
 
 <?php load_component('header') ?>
 
-<main class="not-found-page-idk-1225">
+<main class="not-found-page-idk-1225 blue-header">
     <section class="content-section">
         <div class="content-wrapper">
             <h1>Essa página não foi encontrada...</h1>
