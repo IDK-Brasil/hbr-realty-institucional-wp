@@ -1,7 +1,8 @@
 @use "../../global/global" as global;
 
 .service-section-opportunities-card-idk-1225 {
-  padding: 120px 20px 120px;
+  padding: 120px 20px;
+  overflow-x: hidden;
 
   .service-section-card-wrapper {
     display: flex;
@@ -10,14 +11,18 @@
     gap: 102px;
 
     .service-card {
+      position: relative;
       display: grid;
       grid-template-columns: 1fr 1fr;
       align-items: center;
       gap: 70px;
-      justify-items: start;
+
+      &__content,
+      &__media {
+        z-index: 2;
+      }
 
       &__content {
-        order: 1;
         display: flex;
         flex-direction: column;
         gap: 20px;
@@ -53,10 +58,34 @@
         line-height: 1.5;
       }
 
-      // inverte a cada card par
-      &:nth-child(even) {
-        justify-items: end;
+      &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        width: 116px;
+        height: 230px;
+        background: url("../../assets/img/circle-vector.svg") no-repeat center /
+          contain;
+        transform: translateY(-50%);
+        pointer-events: none;
+        z-index: 1;
+      }
 
+      &:nth-child(odd)::after {
+        right: calc(-50vw + 608px);
+      }
+
+      &:nth-child(4n + 3)::after {
+        right: auto;
+        left: calc(-50vw + 608px);
+        transform: rotate(180deg);
+      }
+
+      &:nth-child(even)::after {
+        display: none;
+      }
+
+      &:nth-child(even) {
         .service-card__content {
           order: 2;
         }
@@ -66,6 +95,14 @@
         }
       }
     }
+  }
+}
+
+@media (max-width: 1460px) {
+  .service-section-opportunities-card-idk-1225
+    .service-section-card-wrapper
+    .service-card::after {
+    display: none;
   }
 }
 

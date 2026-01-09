@@ -1537,7 +1537,8 @@ b, strong {
 }
 
 .service-section-opportunities-card-idk-1225 {
-  padding: 120px 20px 120px;
+  padding: 120px 20px;
+  overflow-x: hidden;
 }
 .service-section-opportunities-card-idk-1225 .service-section-card-wrapper {
   display: flex;
@@ -1546,14 +1547,16 @@ b, strong {
   gap: 102px;
 }
 .service-section-opportunities-card-idk-1225 .service-section-card-wrapper .service-card {
+  position: relative;
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
   gap: 70px;
-  justify-items: start;
+}
+.service-section-opportunities-card-idk-1225 .service-section-card-wrapper .service-card__content, .service-section-opportunities-card-idk-1225 .service-section-card-wrapper .service-card__media {
+  z-index: 2;
 }
 .service-section-opportunities-card-idk-1225 .service-section-card-wrapper .service-card__content {
-  order: 1;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -1584,8 +1587,27 @@ b, strong {
   font-weight: var(--weight-regular);
   line-height: 1.5;
 }
-.service-section-opportunities-card-idk-1225 .service-section-card-wrapper .service-card:nth-child(even) {
-  justify-items: end;
+.service-section-opportunities-card-idk-1225 .service-section-card-wrapper .service-card::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 116px;
+  height: 230px;
+  background: url("../../assets/img/circle-vector.svg") no-repeat center/contain;
+  transform: translateY(-50%);
+  pointer-events: none;
+  z-index: 1;
+}
+.service-section-opportunities-card-idk-1225 .service-section-card-wrapper .service-card:nth-child(odd)::after {
+  right: calc(-50vw + 608px);
+}
+.service-section-opportunities-card-idk-1225 .service-section-card-wrapper .service-card:nth-child(4n+3)::after {
+  right: auto;
+  left: calc(-50vw + 608px);
+  transform: rotate(180deg);
+}
+.service-section-opportunities-card-idk-1225 .service-section-card-wrapper .service-card:nth-child(even)::after {
+  display: none;
 }
 .service-section-opportunities-card-idk-1225 .service-section-card-wrapper .service-card:nth-child(even) .service-card__content {
   order: 2;
@@ -1594,6 +1616,11 @@ b, strong {
   order: 1;
 }
 
+@media (max-width: 1460px) {
+  .service-section-opportunities-card-idk-1225 .service-section-card-wrapper .service-card::after {
+    display: none;
+  }
+}
 @media (max-width: 768px) {
   .service-section-opportunities-card-idk-1225 {
     border-top: 1px solid #d4d4d4;
