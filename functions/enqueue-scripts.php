@@ -67,4 +67,20 @@ function idk_enqueue_scripts()
         '1.0',
         true
     );
+    // Enterprise Gallery
+    wp_enqueue_script(
+        'enterprise-gallery-js',
+        get_template_directory_uri() . '/assets/js/enterprise-single/enterprise-gallery.js',
+        [],
+        '1.0',
+        true
+    );
+    // Contact Section Form
+    wp_enqueue_script(
+        'contact-validate-js',
+        get_template_directory_uri() . '/assets/js/enterprise-single/contact-validate.js',
+        [],
+        '1.0',
+        true
+    );
 }

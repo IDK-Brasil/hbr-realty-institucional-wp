@@ -1543,6 +1543,14 @@ b, strong {
   min-height: 500px;
   overflow: hidden;
 }
+.hero-banner-idk-1225::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+  pointer-events: none;
+}
 .hero-banner-idk-1225 img.hero-bg,
 .hero-banner-idk-1225 video.hero-video {
   position: absolute;
@@ -1551,7 +1559,6 @@ b, strong {
   height: 100%;
   object-fit: cover;
   z-index: 1;
-  filter: brightness(0.6);
 }
 .hero-banner-idk-1225 .hero-content {
   position: absolute;
@@ -1567,27 +1574,49 @@ b, strong {
   gap: 20px;
   margin: 0 auto;
 }
-.hero-banner-idk-1225 .hero-content h1 {
+.hero-banner-idk-1225 .hero-content.enterprise-subtitle {
+  max-width: 997px;
+}
+.hero-banner-idk-1225 .address {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+.hero-banner-idk-1225 .address img {
+  width: 24px;
+  height: 24px;
+}
+.hero-banner-idk-1225 .address p {
+  font-weight: var(--weight-bold);
+}
+.hero-banner-idk-1225 h1 {
   font-weight: var(--weight-semibold);
   color: #ffffff;
 }
-.hero-banner-idk-1225 .hero-content .subtitle {
+.hero-banner-idk-1225 .subtitle {
   display: flex;
   flex-direction: column;
   max-width: 590px;
 }
-.hero-banner-idk-1225 .hero-content .subtitle-empresa {
+.hero-banner-idk-1225 .subtitle-empresa {
   max-width: 760px;
 }
-.hero-banner-idk-1225 .hero-content p {
+.hero-banner-idk-1225 .enterprise-subtitle {
+  max-width: 957px;
+  font-weight: var(--weight-regular);
+}
+.hero-banner-idk-1225 p {
   color: #ffffff;
 }
-.hero-banner-idk-1225 .hero-content .hero-buttons {
+.hero-banner-idk-1225 .hero-buttons {
   margin-top: 12px;
   display: flex;
   gap: 12px;
   width: 100%;
   justify-content: center;
+}
+.hero-banner-idk-1225 .hero-buttons .fit-content {
+  width: fit-content;
 }
 .hero-banner-idk-1225 .hero-content-hbr_malls {
   max-width: 916px;
@@ -1687,8 +1716,14 @@ b, strong {
     gap: 16px;
     justify-content: center;
   }
+  .hero-banner-idk-1225 .hero-content.enterprise-subtitle {
+    gap: 14px;
+  }
   .hero-banner-idk-1225 .hero-content h1 {
     text-align: left;
+  }
+  .hero-banner-idk-1225 .address {
+    margin-bottom: 6px;
   }
   .hero-banner-idk-1225 .subtitle {
     align-items: flex-start;
@@ -1699,6 +1734,10 @@ b, strong {
   }
   .hero-banner-idk-1225 .hero-buttons {
     margin-top: 16px;
+    justify-content: flex-start;
+  }
+  .hero-banner-idk-1225 .hero-buttons.enterprise-buttons {
+    margin-top: 6px;
   }
   .hero-banner-idk-1225 .scroll-down {
     width: 100%;
