@@ -5156,7 +5156,8 @@ b, strong {
 }
 
 .enterprise-single-idk-1225 .enterprise-gallery {
-  padding: 80px 20px;
+  margin-top: -90px;
+  padding: 170px 20px 80px;
   text-align: center;
 }
 .enterprise-single-idk-1225 .enterprise-gallery .title {
@@ -5451,7 +5452,8 @@ b, strong {
 }
 @media (max-width: 960px) {
   .enterprise-single-idk-1225 .enterprise-gallery {
-    padding: 80px 20px;
+    margin-top: -106px;
+    padding: 186px 20px 80px;
   }
   .enterprise-single-idk-1225 .enterprise-gallery .container {
     max-width: 100%;

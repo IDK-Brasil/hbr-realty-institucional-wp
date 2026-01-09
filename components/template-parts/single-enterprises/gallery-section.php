@@ -8,7 +8,7 @@
 ?>
 
 <?php if (is_array($galeria) && !empty($galeria)): ?>
-    <section class="enterprise-gallery">
+    <section class="enterprise-gallery" id="galeria">
         <div class="container">
             <h2 class="title">Galeria da <?php echo esc_html($nome); ?></h2>
         </div>
