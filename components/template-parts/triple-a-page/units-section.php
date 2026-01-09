@@ -49,9 +49,9 @@ $total = count($units);
                                     </ul>
                                 <?php endif; ?>
 
-                                <button href="<?php echo get_the_permalink($unit->ID); ?>" class="primary-btn-white">
+                                <a href="<?php echo get_the_permalink($unit->ID); ?>" class="primary-btn-white">
                                     Conferir unidade
-                                </button>
+                                </a>
                             </div>
 
                         </article>
