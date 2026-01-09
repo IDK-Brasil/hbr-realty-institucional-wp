@@ -1477,18 +1477,6 @@ b, strong {
   border-color: #000000;
 }
 
-.color-background-gray {
-  color: #efefef;
-}
-
-.background-background-gray {
-  background-color: #efefef;
-}
-
-.border-background-gray {
-  border-color: #efefef;
-}
-
 .w-full {
   width: 100%;
 }
