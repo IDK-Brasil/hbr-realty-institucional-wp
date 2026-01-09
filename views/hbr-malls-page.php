@@ -39,11 +39,11 @@ get_header();
     ]
   );
 
-  load_component('template-parts/hbr_malls/numbers-section');
+  load_component('template-parts/hbr-malls/numbers-section');
 
-  load_component('template-parts/hbr_malls/malls-section');
+  load_component('template-parts/hbr-malls/malls-section');
 
-  load_component('template-parts/hbr_malls/comercialization-section');
+  load_component('template-parts/hbr-malls/comercialization-section');
   ?>
 </main>
 
