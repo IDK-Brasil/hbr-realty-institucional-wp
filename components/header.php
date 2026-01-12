@@ -33,12 +33,10 @@
 	<!-- End Google Tag Manager -->
 </head>
 
-<body>
+<body <?php body_class(); ?>>
 	<!-- Google Tag Manager (noscript) -->
 	<!-- <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WD4BQ6PC" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript> -->
 	<!-- End Google Tag Manager (noscript) -->
-
-	<?php body_class(); ?>>
 
 	<header class="site-header-idk-1225 is-top">
 		<div class="container header-wrapper">

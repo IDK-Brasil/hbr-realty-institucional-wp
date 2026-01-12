@@ -7,8 +7,8 @@
  */
 ?>
 
-<?php if (is_array($galeria) && !empty($galeria)): ?>
-    <section class="enterprise-gallery" id="galeria">
+<section class="enterprise-gallery" id="galeria">
+    <?php if (is_array($galeria) && !empty($galeria)): ?>
         <div class="container">
             <h2 class="title">Galeria da <?php echo esc_html($nome); ?></h2>
         </div>
@@ -44,5 +44,5 @@
         </div>
 
         <div class="swiper-pagination"></div>
-    </section>
-<?php endif; ?>
+    <?php endif; ?>
+</section>
