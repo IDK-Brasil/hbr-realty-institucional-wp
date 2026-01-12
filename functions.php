@@ -80,15 +80,6 @@ function hbr_enqueue_assets()
         true
     );
 
-    // HEADER [MODAL VALIDATE]
-    wp_enqueue_script(
-        'hbr-modal-validate',
-        get_template_directory_uri() . '/assets/js/header/modal-validate.js',
-        [],
-        time(),
-        true
-    );
-
     // BLOG SLIDER (estava FORA DO HOOK — causava erro)
     wp_enqueue_script(
         'hbr-blog-slider',

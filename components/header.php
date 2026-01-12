@@ -1,8 +1,8 @@
 <?php
 
-    /**
-     * Header do tema
-     */
+/**
+ * Header do tema
+ */
 ?>
 <!DOCTYPE html>
 <html
@@ -31,11 +31,11 @@
 					<ul class="menu-list">
 						<?php foreach ($menu as $item): ?>
 							<?php
-                                $titulo  = $item['nome_item_menu'];
-                                $link    = $item['link_item_menu']['url'] ?? '#';
-                                $slug    = sanitize_title($titulo);
-                                $hasMega = ($item['item_submenu'] === 'Sim');
-                            ?>
+							$titulo  = $item['nome_item_menu'];
+							$link    = $item['link_item_menu']['url'] ?? '#';
+							$slug    = sanitize_title($titulo);
+							$hasMega = ($item['item_submenu'] === 'Sim');
+							?>
 
 							<li class="menu-item							                    							                    							                    							                    							                    							                    							                    							                    							                    							                    							                    							                    							                    							                    							                    							                    							                    							                    							                    							                    							                    							                    							                    							                    							                    							                    							                    							                    							                    							                    							                    							                    							                    							                    							                    							                    							                    							                    							                    							                    							                    							                    							                    							                    							                    							                    							                    							                    							                    							                    							                    							                    							                    							                    							                    							                    							                    							                    							                    							                    							                    							                    							                    							                    							                    							                    							                    							                    							                    							                    							                    							                    							                    							                    							                    							                    							                    							                    							                    							                    							                    							                    							                    							                    							                                         <?php echo $hasMega ? 'has-mega' : ''; ?>"
 								data-menu="<?php echo esc_attr($slug); ?>">
@@ -67,17 +67,17 @@
 		<?php if ($menu): ?>
 			<?php foreach ($menu as $item): ?>
 				<?php
-                    if ($item['item_submenu'] !== 'Sim') {
-                        continue;
-                    }
+				if ($item['item_submenu'] !== 'Sim') {
+					continue;
+				}
 
-                    $slug = sanitize_title($item['nome_item_menu']);
-                    $cols = $item['submenu_repetidor'];
+				$slug = sanitize_title($item['nome_item_menu']);
+				$cols = $item['submenu_repetidor'];
 
-                    if (! $cols) {
-                        continue;
-                    }
-                ?>
+				if (! $cols) {
+					continue;
+				}
+				?>
 
 				<div class="mega-menu" data-mega-menu="<?php echo esc_attr($slug); ?>">
 					<div class="mega-container">
@@ -87,12 +87,12 @@
 								<p><?php echo esc_html($col['description_item_submenu']); ?></p>
 
 								<?php
-                                    if ($col['link_externo_submenu'] === 'Sim') {
-                                        $link = $col['link_externo_item_submenu_choice'];
-                                    } else {
-                                        $link = $col['link_botao_item_submenu']['url'];
-                                    }
-                                ?>
+								if ($col['link_externo_submenu'] === 'Sim') {
+									$link = $col['link_externo_item_submenu_choice'];
+								} else {
+									$link = $col['link_botao_item_submenu']['url'];
+								}
+								?>
 
 								<a href="<?php echo esc_url($link); ?>" class="mega-link">
 									<?php echo esc_html($col['rotulo_botao_item_submenu']); ?> →
@@ -110,11 +110,11 @@
 				<ul class="mobile-menu-list">
 					<?php foreach ($menu as $item): ?>
 						<?php
-                            $titulo  = $item['nome_item_menu'];
-                            $link    = $item['link_item_menu']['url'] ?? '#';
-                            $hasMega = ($item['item_submenu'] === 'Sim');
-                            $slug    = sanitize_title($titulo);
-                        ?>
+						$titulo  = $item['nome_item_menu'];
+						$link    = $item['link_item_menu']['url'] ?? '#';
+						$hasMega = ($item['item_submenu'] === 'Sim');
+						$slug    = sanitize_title($titulo);
+						?>
 						<li class="mobile-item
 						<?php echo $hasMega ? 'has-submenu' : ''; ?>">
 							<a href="<?php echo esc_url($link); ?>">
@@ -154,30 +154,9 @@
 
 				<p>É lojista ou investidor e gostaria de conhecer as oportunidades disponíveis neste empreendimento? Entre em contato pelo formulário abaixo ou pelos canais de contato.</p>
 
-				<form id="contactForm">
-					<div class="input-group">
-						<img src="<?php echo get_template_directory_uri(); ?>/assets/img/user-icon.svg" class="input-icon">
-						<input type="text" name="nome" id="nameContact" placeholder="Insira seu nome" required>
-					</div>
-
-					<div class="input-group">
-						<img src="<?php echo get_template_directory_uri(); ?>/assets/img/email-icon.svg" class="input-icon">
-						<input type="email" name="email" id="emailContact" placeholder="Insira seu melhor e-mail" required>
-					</div>
-
-					<div class="input-group textarea-group">
-						<textarea name="mensagem" id="msgContact" placeholder="Deixe sua mensagem..." required></textarea>
-					</div>
-
-					<label class="checkbox-line">
-						<input type="checkbox" id="termsContact" required>
-						<span class="check-icon"></span>
-
-						<span>Li e concordo com os <a href="/termos-de-uso-e-lgpd">Termos e Condições de Uso</a></span>
-					</label>
-
-					<button class="send-btn" type="submit" id="sendContact">Enviar</button>
-				</form>
+				<div class="forminator-wrapper">
+					<?php echo do_shortcode('[forminator_form id="612"]'); ?>
+				</div>
 			</div>
 
 			<div class="modal-col modal-info">
@@ -191,11 +170,11 @@
 						<h5>Onde nos encontrar</h5>
 
 						<?php
-                            $cidade1   = get_field('cidade_footer_1', 'option');
-                            $endereco1 = get_field('endereco_footer_1', 'option');
-                            $cidade2   = get_field('cidade_footer_2', 'option');
-                            $endereco2 = get_field('endereco_footer_2', 'option');
-                        ?>
+						$cidade1   = get_field('cidade_footer_1', 'option');
+						$endereco1 = get_field('endereco_footer_1', 'option');
+						$cidade2   = get_field('cidade_footer_2', 'option');
+						$endereco2 = get_field('endereco_footer_2', 'option');
+						?>
 
 						<?php if ($cidade1 && $endereco1): ?>
 							<div>
@@ -213,29 +192,29 @@
 					</div>
 
 					<?php
-                        $linkedin  = get_field('linkedin_footer_social_media', 'option');
-                        $instagram = get_field('instagram_footer_social_media', 'option');
-                        $whatsapp  = get_field('whatsapp_footer_social_media', 'option');
+					$linkedin  = get_field('linkedin_footer_social_media', 'option');
+					$instagram = get_field('instagram_footer_social_media', 'option');
+					$whatsapp  = get_field('whatsapp_footer_social_media', 'option');
 
-                        $sociais = [
-                            'linkedin'  => $linkedin,
-                            'instagram' => $instagram,
-                            'whatsapp'  => $whatsapp,
-                        ];
+					$sociais = [
+						'linkedin'  => $linkedin,
+						'instagram' => $instagram,
+						'whatsapp'  => $whatsapp,
+					];
 
-                        $sociais = array_filter($sociais);
+					$sociais = array_filter($sociais);
 
-                        if (! empty($sociais)):
-                    ?>
+					if (! empty($sociais)):
+					?>
 						<div class="modal-socials">
 							<h5>Nossas redes sociais</h5>
 
 							<div class="social-grid">
 								<?php foreach ($sociais as $slug => $url): ?>
 									<?php
-                                        $icon  = get_template_directory_uri() . "/assets/img/social/{$slug}-icon.svg";
-                                        $label = ucfirst($slug);
-                                    ?>
+									$icon  = get_template_directory_uri() . "/assets/img/social/{$slug}-icon.svg";
+									$label = ucfirst($slug);
+									?>
 
 									<a href="<?php echo esc_url($url); ?>" target="_blank" class="social-btn">
 										<img src="<?php echo esc_url($icon); ?>" alt="<?php echo esc_attr($label); ?>">
@@ -251,9 +230,9 @@
 
 						<div class="contact-item">
 							<?php
-                                $email = get_field('email_footer', 'option');
-                                $phone = get_field('telefone_footer', 'option');
-                            ?>
+							$email = get_field('email_footer', 'option');
+							$phone = get_field('telefone_footer', 'option');
+							?>
 
 							<?php if ($email): ?>
 								<a href="mailto:<?php echo esc_attr($email); ?>"><?php echo esc_html($email); ?></a>

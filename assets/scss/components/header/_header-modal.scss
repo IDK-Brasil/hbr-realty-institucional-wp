@@ -59,11 +59,6 @@
     line-height: 1.5;
   }
 
-  .input-group {
-    position: relative;
-    margin-bottom: 20px;
-  }
-
   .input-icon {
     position: absolute;
     left: 16px;
@@ -147,6 +142,21 @@
       color: inherit;
       text-decoration: underline;
     }
+  }
+
+  .forminator-error-message {
+    font-size: 12px;
+    color: global.color(error);
+    padding: 4px;
+  }
+
+  .forminator-error {
+    display: none !important;
+  }
+
+  .forminator-success {
+    color: global.color(secondary);
+    padding: 8px 4px;
   }
 
   .send-btn {
@@ -345,6 +355,146 @@
 
     .modal-info {
       display: none;
+    }
+  }
+
+  .forminator-wrapper {
+    /* === FORMATOR RESET === */
+    .forminator-ui {
+      all: unset;
+    }
+
+    .forminator-ui * {
+      box-sizing: border-box;
+      font-family: inherit;
+    }
+
+    /* === INPUT GROUP === */
+    .forminator-field {
+      margin-bottom: 20px;
+    }
+
+    .forminator-label {
+      display: none !important;
+    }
+
+    .forminator-row {
+      margin: 0 !important;
+    }
+
+    .forminator-field input,
+    .forminator-field textarea {
+      width: 100%;
+      padding: 16px 20px 16px 54px;
+      font-size: 18px;
+      border: 1px solid global.color(gray-200);
+      border-radius: 12px;
+      color: global.color(gray-1000);
+    }
+
+    .forminator-field textarea {
+      padding-left: 20px;
+      height: 180px;
+    }
+
+    .forminator-field input:focus,
+    .forminator-field textarea:focus {
+      outline: none;
+      border-color: global.color(primary);
+    }
+
+    .input-group,
+    .checkbox-line .forminator-field {
+      padding: 0 !important;
+      margin: 0 !important;
+    }
+
+    /* === ICONES === */
+    .input-group.has-icon {
+      position: relative;
+    }
+
+    .input-group.has-icon::before {
+      content: "";
+      position: absolute;
+      left: 20px;
+      top: 15px;
+      width: 24px;
+      height: 24px;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+
+    .forminator-description {
+      display: none;
+    }
+
+    .input-group.user::before {
+      background-image: url("../img/user-icon.svg");
+    }
+
+    .input-group.email::before {
+      background-image: url("../img/email-icon.svg");
+    }
+
+    /* === CHECKBOX FORMATOR === */
+    .forminator-checkbox {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .forminator-checkbox label {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      cursor: pointer;
+      font-size: 14px;
+      color: global.color(gray-700);
+    }
+
+    /* esconde o input real */
+    .forminator-checkbox input {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    /* caixa visual */
+    .forminator-checkbox-box {
+      width: 24px;
+      height: 24px;
+      min-width: 24px;
+      border: 2px solid global.color(primary);
+      border-radius: 5px;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 14px;
+      transition: 0.2s ease;
+    }
+
+    /* checked */
+    .forminator-checkbox input:checked + .forminator-checkbox-box {
+      background-color: global.color(primary);
+      background-image: url("../img/check-icon.svg");
+      border-color: global.color(primary);
+    }
+
+    /* === BOTÃO === */
+    .forminator-button {
+      width: 100%;
+      padding: 16px;
+      background: global.color(primary);
+      color: global.color(gray-0);
+      border-radius: 12px;
+      font-weight: var(--weight-medium);
+      border: none;
+      cursor: pointer;
+    }
+
+    .forminator-button:hover {
+      background: global.color(support-blue-200);
+      color: global.color(primary);
     }
   }
 }

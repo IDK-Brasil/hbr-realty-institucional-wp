@@ -13,7 +13,7 @@
 
             <p>É lojista ou investidor e gostaria de conhecer as oportunidades disponíveis neste empreendimento? Entre em contato pelo formulário abaixo ou pelos canais de contato.</p>
 
-            <form id="contactSectionForm">
+            <!-- <form id="contactSectionForm">
                 <div class="input-group">
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/user-icon.svg" class="input-icon">
                     <input type="text" name="nome" id="nameContactSection" placeholder="Insira seu nome" required>
@@ -36,7 +36,11 @@
                 </label>
 
                 <button class="send-btn" type="submit" id="sendContactSection">Enviar</button>
-            </form>
+            </form> -->
+
+            <div class="forminator-wrapper">
+                <?php echo do_shortcode('[forminator_form id="613"]'); ?>
+            </div>
         </div>
     </div>
 
