@@ -28,7 +28,7 @@ function format_date_pt_br($date)
     <div class="container terms-grid">
 
         <!-- COLUNA ESQUERDA -->
-        <div class="terms-content">
+        <div class="terms-content" id="politica-de-privacidade">
             <?php if ($data_termos): ?>
                 <p class="terms-updated">
                     Atualização em: <?php echo esc_html(format_date_pt_br($data_termos)); ?>
@@ -83,7 +83,7 @@ function format_date_pt_br($date)
             <?php endif; ?>
 
             <?php if ($cookies): ?>
-                <section class="terms-group">
+                <section class="terms-group" id="politica-de-cookies">
                     <?php if ($data_cookies): ?>
                         <p class="terms-updated">
                             Atualização em: <?php echo esc_html(format_date_pt_br($data_cookies)); ?>
