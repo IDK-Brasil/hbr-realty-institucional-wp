@@ -1477,6 +1477,30 @@ b, strong {
   border-color: #000000;
 }
 
+.color-background-gray {
+  color: #efefef;
+}
+
+.background-background-gray {
+  background-color: #efefef;
+}
+
+.border-background-gray {
+  border-color: #efefef;
+}
+
+.color-error {
+  color: #f74343;
+}
+
+.background-error {
+  background-color: #f74343;
+}
+
+.border-error {
+  border-color: #f74343;
+}
+
 .w-full {
   width: 100%;
 }

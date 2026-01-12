@@ -1489,6 +1489,18 @@ b, strong {
   border-color: #efefef;
 }
 
+.color-error {
+  color: #f74343;
+}
+
+.background-error {
+  background-color: #f74343;
+}
+
+.border-error {
+  border-color: #f74343;
+}
+
 .w-full {
   width: 100%;
 }
