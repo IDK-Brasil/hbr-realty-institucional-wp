@@ -7,6 +7,13 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
+  const mediaQuery = window.matchMedia("(max-width: 960px)");
+  let isMobile = mediaQuery.matches;
+
+  mediaQuery.addEventListener("change", (e) => {
+    isMobile = e.matches;
+  });
+
   function activateTab(index, smooth = true) {
     tabs.forEach((t) => t.classList.remove("is-active"));
     contents.forEach((c) => c.classList.remove("is-active"));
@@ -23,11 +30,13 @@ document.addEventListener("DOMContentLoaded", () => {
     tab.classList.add("is-active");
     content.classList.add("is-active");
 
-    tab.scrollIntoView({
-      behavior: smooth ? "smooth" : "auto",
-      inline: "center",
-      block: "nearest",
-    });
+    if (isMobile) {
+      tab.scrollIntoView({
+        behavior: smooth ? "smooth" : "auto",
+        inline: "center",
+        block: "nearest",
+      });
+    }
   }
 
   tabs.forEach((tab, index) => {
